@@ -5,7 +5,7 @@ from aiogram.dispatcher.filters import Text
 import random
 
 # Вместо BOT TOKEN HERE нужно вставить токен вашего бота, полученный у @BotFather
-BOT_TOKEN: str = '5738942291:AAEY_1M9nvnuTJ46RXfx81AL3LILVUjByWM'
+BOT_TOKEN: str = 'token'
 
 # Создаем объекты бота и диспетчера
 bot: Bot = Bot(BOT_TOKEN)
