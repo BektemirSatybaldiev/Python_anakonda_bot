@@ -1,24 +1,18 @@
 from aiogram import types
-from keyboards.keyboard_utils import keyboard, button_toyota_ist, button_honda_fit, button_toyota_raum, \
-    button_toyota_prius
+from keyboards.keyboard_utils import keyboard
+from lexicon.lexicon_en import main_menu
+from lexicon.lexicon_ru import cars_ru
 from services import cars_prices
 
 
+async def process_main_menu(message: types.Message):
+    await message.answer(main_menu[message.text])
+
+
 async def process_start_command(message: types.Message):
-    await message.answer('Средняя цена авто в Бишкеке', reply_markup=keyboard)
+    await message.answer('Хочешь узнать среднюю рыночную стоимость авто?\nВыбери свою марку автомобиля!',
+                         reply_markup=keyboard)
 
 
-async def process_toyota_ist_answer(message: types.Message):
-    await message.answer(cars_prices.get_model_price(button_toyota_ist.text))
-
-
-async def process_honda_fit_answer(message: types.Message):
-    await message.answer(cars_prices.get_model_price(button_honda_fit.text))
-
-
-async def process_toyota_raum_answer(message: types.Message):
-    await message.answer(cars_prices.get_model_price(button_toyota_raum.text))
-
-
-async def process_toyota_prius_answer(message: types.Message):
-    await message.answer(cars_prices.get_model_price(button_toyota_prius.text))
+async def process_car_answer(message: types.Message):
+    await message.answer(cars_prices.get_model_price(cars_ru[message.text]))

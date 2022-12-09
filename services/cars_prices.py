@@ -1,8 +1,7 @@
 import requests
 import bs4
-from lexicon import lexicon_ru
 from lexicon.lexicon_en import cars_dict
-
+from lexicon.lexicon_ru import cars_en
 
 """This parser gets information about average price of a few famous car models in Bishkek.
 This data may be interesting for car sellers"""
@@ -24,5 +23,5 @@ def get_model_price(model):
                 result.append(konvertaciya)
                 amount_of_cars += 1
     average_lalafo_price = int(sum(result) / len(result))
-    data = f'Средняя цена авто {lexicon_ru.cars_ru[model]}\n{average_lalafo_price} KGS'
+    data = f'Средняя цена авто {cars_en[model]}\n{average_lalafo_price} KGS'
     return data
