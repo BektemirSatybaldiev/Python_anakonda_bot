@@ -1,2 +1,2 @@
-# Python_anakonda_bot
-My telegrambot training repo
+# CarsPriceParser
+Hello ! This parser-bot can get information about average price of cars.
