@@ -19,7 +19,7 @@ def get_model_price(model):
                 result.append(int(str(j)[6:-10].replace(" ", "")))
                 amount_of_cars += 1
             elif str(j).endswith('USD</span>'):
-                konvertaciya = int(int(str(j)[6:-10].replace(" ", "")) * 84.45)
+                konvertaciya = int(int(str(j)[6:-10].replace(" ", "")) * 85)
                 result.append(konvertaciya)
                 amount_of_cars += 1
     average_lalafo_price = int(sum(result) / len(result))
